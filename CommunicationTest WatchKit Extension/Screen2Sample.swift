@@ -13,10 +13,12 @@ import WatchConnectivity
 class Screen2Sample: WKInterfaceController, WCSessionDelegate {
     
     // MARK: Outlets
+    
+    var pokename:String!
     // ---------------------
 
     // 1. Outlet for the image view
-    @IBOutlet var pokemonImageView: WKInterfaceImage!
+//    @IBOutlet var pokemonImageView: WKInterfaceImage!
     
     // 2. Outlet for the label
     @IBOutlet var nameLabel: WKInterfaceLabel!
@@ -47,9 +49,13 @@ class Screen2Sample: WKInterfaceController, WCSessionDelegate {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
-        
-        
-    }
+        let preferences = UserDefaults.standard
+            guard let savedName = preferences.string(forKey: "nameLabel") else {
+                return
+            }
+            
+            self.nameLabel.setText(savedName)
+        }
     
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
@@ -64,8 +70,22 @@ class Screen2Sample: WKInterfaceController, WCSessionDelegate {
     
     
     @IBAction func selectNameButtonPressed() {
-        print("select name button pressed")
+        // 1. When person clicks on button, show them the input UI
+        let suggestedResponses = ["Karthik", "Prudhvi","Jenelle","siva"]
+        presentTextInputController(withSuggestions: suggestedResponses, allowedInputMode: .plain) {
+            
+            (results) in
+            
+            if (results != nil && results!.count > 0) {
+                // 2. write your code to process the person's response
+                let userResponse = results?.first as? String
+                self.nameLabel.setText(userResponse)
+                self.pokename = userResponse
+            }
+        }
     }
     
 
 }
+
+

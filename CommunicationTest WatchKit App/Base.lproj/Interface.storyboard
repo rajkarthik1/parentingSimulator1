@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13771" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
-    <device id="watch38" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15400" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="OAR-6a-aT5">
+    <device id="watch38"/>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13756"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15400"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Helvetica.ttc">
-            <string>Helvetica-Bold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
@@ -81,7 +74,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="555" y="31.5"/>
+            <point key="canvasLocation" x="936" y="384"/>
         </scene>
         <!--Screen2 Sample-->
         <scene sceneID="rSw-iR-0SS">
@@ -94,23 +87,46 @@
                                 <action selector="selectNameButtonPressed" destination="TKJ-vR-82D" id="PWX-4J-nLv"/>
                             </connections>
                         </button>
-                        <imageView alignment="center" id="YVj-81-CS0"/>
                         <label alignment="left" text="Label" id="hsS-ha-cvx"/>
                         <button width="1" alignment="left" title="Start" id="pBg-zB-rVo">
                             <color key="titleColor" red="0.31372549020000001" green="0.27450980390000002" blue="0.34509803919999998" alpha="1" colorSpace="deviceRGB"/>
                             <color key="backgroundColor" red="1" green="0.9385274106" blue="0.23414020229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="startButtonPressed" destination="TKJ-vR-82D" id="yIB-Vl-PdC"/>
+                                <segue destination="AgC-eL-Hgc" kind="push" id="eF8-22-qsT"/>
                             </connections>
                         </button>
                     </items>
                     <connections>
                         <outlet property="nameLabel" destination="hsS-ha-cvx" id="UZr-zS-n0S"/>
-                        <outlet property="pokemonImageView" destination="YVj-81-CS0" id="xZn-R5-7aP"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="562" y="382"/>
+            <point key="canvasLocation" x="562" y="381.5"/>
+        </scene>
+        <!--First Interface Controller-->
+        <scene sceneID="ikW-IR-a9b">
+            <objects>
+                <controller id="OAR-6a-aT5" customClass="firstInterfaceController" customModule="CommunicationTest_WatchKit_Extension">
+                    <items>
+                        <label width="136" height="47" alignment="left" text="Congrats!You chose" id="cjZ-Wl-J0e"/>
+                        <imageView width="77" alignment="center" image="pikachu" id="21g-qd-vbj"/>
+                        <button width="95" height="43" alignment="left" title="NEXT" backgroundImage="heart" catalog="system" id="yEY-sR-OTF">
+                            <color key="titleColor" red="0.19141921714608112" green="0.20499017272868059" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <action selector="nextpage" destination="OAR-6a-aT5" id="Vj0-28-xuS"/>
+                                <segue destination="TKJ-vR-82D" kind="push" id="itw-lm-qG0"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="156" y="339.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="heart" catalog="system" width="64" height="56"/>
+        <image name="pikachu" width="64" height="64"/>
+        <image name="pokeball" width="64" height="64"/>
+    </resources>
 </document>
