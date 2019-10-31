@@ -140,6 +140,8 @@
                     </items>
                     <connections>
                         <outlet property="pokhom" destination="hSM-8A-mWj" id="uS7-eG-XkV"/>
+                        <outlet property="sendstat" destination="HZJ-kg-rVg" id="Kl7-GH-rKG"/>
+                        <outlet property="wakeUp" destination="vKH-O1-qXJ" id="2Cu-6o-I04"/>
                     </connections>
                 </controller>
             </objects>

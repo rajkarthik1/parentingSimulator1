@@ -13,7 +13,9 @@ import WatchConnectivity
 
 class HibernateInterfaceController: WKInterfaceController, WCSessionDelegate {
     
+    @IBOutlet var sendstat: WKInterfaceButton!
     @IBOutlet var pokhom: WKInterfaceImage!
+    @IBOutlet var wakeUp: WKInterfaceButton!
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
            
        }
