@@ -39,7 +39,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         print("WATCH: Got message from Phone")
         // Message from phone comes in this format: ["course":"MADT"]
         let messageBody = message["course"] as! String
-        messageLabel.setText(messageBody)
+       print(messageBody)
     }
     
 
@@ -103,13 +103,13 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     
     
     // MARK: Functions for Pokemon Parenting
-    @IBAction func nameButtonPressed() {
-        print("name button pressed")
-    }
-
-    @IBAction func startButtonPressed() {
-        print("Start button pressed")
-    }
+//    @IBAction func nameButtonPressed() {
+//        print("name button pressed")
+//    }
+//
+//    @IBAction func startButtonPressed() {
+//        print("Start button pressed")
+//    }
     
     @IBAction func feedButtonPressed() {
         print("Feed button pressed")

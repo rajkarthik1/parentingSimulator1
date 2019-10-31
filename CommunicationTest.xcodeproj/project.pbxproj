@@ -21,6 +21,8 @@
 		05E95237236494EA00AA7287 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E95236236494EA00AA7287 /* ExtensionDelegate.swift */; };
 		05E95239236494EA00AA7287 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05E95238236494EA00AA7287 /* Assets.xcassets */; };
 		8C56A490236B37370070B6E6 /* firstInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C56A48F236B37370070B6E6 /* firstInterfaceController.swift */; };
+		8C56A492236B4C8A0070B6E6 /* HibernateInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C56A491236B4C8A0070B6E6 /* HibernateInterfaceController.swift */; };
+		8C56A494236B4C990070B6E6 /* FeedInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C56A493236B4C990070B6E6 /* FeedInterfaceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,8 @@
 		05E95238236494EA00AA7287 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05E9523A236494EA00AA7287 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C56A48F236B37370070B6E6 /* firstInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstInterfaceController.swift; sourceTree = "<group>"; };
+		8C56A491236B4C8A0070B6E6 /* HibernateInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HibernateInterfaceController.swift; sourceTree = "<group>"; };
+		8C56A493236B4C990070B6E6 /* FeedInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedInterfaceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +160,8 @@
 				05E9523A236494EA00AA7287 /* Info.plist */,
 				05987CEF236B0DFB0039757C /* Screen2Sample.swift */,
 				8C56A48F236B37370070B6E6 /* firstInterfaceController.swift */,
+				8C56A491236B4C8A0070B6E6 /* HibernateInterfaceController.swift */,
+				8C56A493236B4C990070B6E6 /* FeedInterfaceController.swift */,
 			);
 			path = "CommunicationTest WatchKit Extension";
 			sourceTree = "<group>";
@@ -306,8 +312,10 @@
 			files = (
 				05987CF0236B0DFB0039757C /* Screen2Sample.swift in Sources */,
 				05E95237236494EA00AA7287 /* ExtensionDelegate.swift in Sources */,
+				8C56A492236B4C8A0070B6E6 /* HibernateInterfaceController.swift in Sources */,
 				8C56A490236B37370070B6E6 /* firstInterfaceController.swift in Sources */,
 				05E95235236494EA00AA7287 /* InterfaceController.swift in Sources */,
+				8C56A494236B4C990070B6E6 /* FeedInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
