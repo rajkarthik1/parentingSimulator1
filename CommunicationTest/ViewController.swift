@@ -34,7 +34,10 @@ class ViewController: UIViewController, WCSessionDelegate  {
     // 3. This function is called when Phone receives message from Watch
     func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
         
-        let Message = message["PIKA PIKA"] as! String
+       let life = message["life"] as! String
+          let hunger = message["hunger"] as! String
+              lifebar.text = life
+              hungerbar.text = hunger
 
         DispatchQueue.main.async {
             self.outputLabel.insertText("\nMessage Received: \(message)")
@@ -50,7 +53,6 @@ class ViewController: UIViewController, WCSessionDelegate  {
     // -----------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         // 1. Check if phone supports WCSessions
         print("view loaded")
@@ -73,7 +75,9 @@ class ViewController: UIViewController, WCSessionDelegate  {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBOutlet weak var lifebar: UILabel!
+    @IBOutlet weak var hungerbar: UILabel!
+    
     // MARK: Actions
     // -------------------
     @IBAction func sendMessageButtonPressed(_ sender: Any) {
@@ -100,22 +104,29 @@ class ViewController: UIViewController, WCSessionDelegate  {
     // MARK: Choose a Pokemon actions
     
     @IBAction func pokemonButtonPressed(_ sender: Any) {
-        print("You selected Pikachu!!!!")
-        if (WCSession.default.isReachable == true) {
+        print("You Selected Pikachu!!!")
+        if(WCSession.default.isReachable == true){
+        //            Here is the message you want to send to the watch
             
-            let Message = ["PIKA PIKA"]
+                    let message = ["name":"pikachu"]
             
-            // Send the message
-//            WCSession.default.sendMessage(message, replyHandler:nil)
-        }
-        else {
-            print("Sending message to watch")
-           
-        }
-        
+                    WCSession.default.sendMessage(message, replyHandler: nil)
+
+                    }
     }
+       
+        
     @IBAction func caterpieButtonPressed(_ sender: Any) {
         print("You selected Caterpie!!!")
+        
+        if(WCSession.default.isReachable == true){
+              //            Here is the message you want to send to the watch
+                  
+                          let message = ["name":"Caterpie"]
+                  
+                          WCSession.default.sendMessage(message, replyHandler: nil)
+
+                          }
     }
     
     

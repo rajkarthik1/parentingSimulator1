@@ -13,10 +13,16 @@ import WatchConnectivity
 
 class HibernateInterfaceController: WKInterfaceController, WCSessionDelegate {
     
+    @IBOutlet var pokhom: WKInterfaceImage!
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
            
        }
-
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
+     
+    let life = message["life"] as! String
+       let hunger = message["hunger"] as! String
+        
+    }
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
@@ -35,22 +41,19 @@ class HibernateInterfaceController: WKInterfaceController, WCSessionDelegate {
     
     
     @IBAction func SendStats() {
-        // 1. When person clicks on button, show them the input UI
-        let suggestedResponses = ["Karthik", "Prudhvi","Jenelle","siva"]
-        presentTextInputController(withSuggestions: suggestedResponses, allowedInputMode: .plain) {
-            
-            (results) in
-            
-            if (results != nil && results!.count > 0) {
-                // 2. write your code to process the person's response
-                let userResponse = results?.first as? String
-                //self.nameLabel.setText(userResponse)
-               // self.pokename = userResponse
-            }
-        }
+    print("I CLICKED THE BUTTON")
+     if (WCSession.default.isReachable == true) {
+               // Here is the message you want to send to the watch
+               // All messages get sent as dictionaries
+               let message = ["life":"65",
+                              "hunger":"20"] as [String : Any]
+               
+               // Send the message
+               WCSession.default.sendMessage(message, replyHandler:nil)
+  
+           }
     }
-        
-        
+   
     }
     
 

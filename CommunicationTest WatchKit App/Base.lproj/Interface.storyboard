@@ -14,19 +14,12 @@
                     <items>
                         <group width="1" alignment="left" id="PEo-iJ-VR0">
                             <items>
-                                <button alignment="left" title="Push " id="fzB-f5-y2S">
-                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <fontDescription key="font" type="system" pointSize="10"/>
-                                    <connections>
-                                        <action selector="buttonPressed" destination="AgC-eL-Hgc" id="EFk-bs-nx7"/>
-                                    </connections>
-                                </button>
                                 <label height="20" alignment="left" text="Label" numberOfLines="2" id="PMJ-75-bao">
                                     <fontDescription key="font" name="Helvetica-Bold" family="Helvetica" pointSize="13"/>
                                 </label>
                             </items>
                         </group>
-                        <imageView width="47" height="47" alignment="center" image="pokeball" id="RxI-YZ-AgM"/>
+                        <imageView width="91" height="47" alignment="center" image="Pokhom" id="RxI-YZ-AgM"/>
                         <label width="134" height="18" alignment="center" text="Wht u wnt TODO?" id="QdJ-Fj-LrR">
                             <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
                         </label>
@@ -62,12 +55,21 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="936" y="385"/>
+            <point key="canvasLocation" x="936" y="384.5"/>
         </scene>
         <!--Feed Interface Controller-->
         <scene sceneID="YjF-i3-azN">
             <objects>
-                <controller id="vZ0-cX-pqS" customClass="FeedInterfaceController" customModule="CommunicationTest_WatchKit_Extension"/>
+                <controller id="vZ0-cX-pqS" customClass="FeedInterfaceController" customModule="CommunicationTest_WatchKit_Extension">
+                    <items>
+                        <button width="1" alignment="left" title="Feed Me!" id="0dD-Tu-mVh">
+                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="selectNameButtonPressed" destination="TKJ-vR-82D" id="A1p-2D-E83"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
             </objects>
             <point key="canvasLocation" x="1256" y="372"/>
         </scene>
@@ -106,8 +108,9 @@
                     <items>
                         <label width="136" height="47" alignment="left" text="Congrats!You chose" id="cjZ-Wl-J0e"/>
                         <imageView width="77" alignment="center" image="pikachu" id="21g-qd-vbj"/>
-                        <button width="95" height="43" alignment="center" title="NEXT" backgroundImage="square.and.arrow.up" catalog="system" id="yEY-sR-OTF">
-                            <color key="titleColor" red="0.22040050011445858" green="0.88068733808290156" blue="0.15102277257331045" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <button width="95" height="43" alignment="center" title="NEXT" id="yEY-sR-OTF">
+                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" red="0.87429408652468177" green="0.99864394430051817" blue="0.35560008108746305" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="displayP3"/>
                             <fontDescription key="font" type="boldSystem" pointSize="18"/>
                             <connections>
                                 <action selector="nextpage" destination="OAR-6a-aT5" id="Vj0-28-xuS"/>
@@ -125,19 +128,26 @@
                 <controller id="i54-w9-EK2" customClass="HibernateInterfaceController" customModule="CommunicationTest_WatchKit_Extension">
                     <items>
                         <button width="1" alignment="left" title="Send Stats" id="HZJ-kg-rVg">
+                            <color key="backgroundColor" red="0.19141921710000001" green="0.2049901727" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="SendStats" destination="i54-w9-EK2" id="XCM-hv-Di2"/>
                             </connections>
                         </button>
+                        <imageView width="136" height="72" alignment="left" image="Pokhom" id="hSM-8A-mWj"/>
+                        <button width="1" alignment="center" verticalAlignment="bottom" title="Wake Up!" id="vKH-O1-qXJ">
+                            <color key="backgroundColor" red="0.19141921710000001" green="0.2049901727" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </button>
                     </items>
+                    <connections>
+                        <outlet property="pokhom" destination="hSM-8A-mWj" id="uS7-eG-XkV"/>
+                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="1256" y="811"/>
+            <point key="canvasLocation" x="1256" y="813"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Pokhom" width="462" height="349"/>
         <image name="pikachu" width="64" height="64"/>
-        <image name="pokeball" width="64" height="64"/>
-        <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
     </resources>
 </document>
